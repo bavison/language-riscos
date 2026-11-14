@@ -1,0 +1,59 @@
+{
+	"name": "language-riscos",
+	"displayName": "RISC OS languages",
+	"description": "Syntax highlighting for ARM assembly (ObjAsm/armasm syntax), BBC BASIC and CMHG",
+	"version": "1.0.0",
+	"license": "MIT",
+	"author": "Ben Avison",
+	"engines": {
+		"vscode": "^1.0.0"
+	},
+	"categories": [
+		"Programming Languages"
+	],
+	"scripts": {
+		"build": "node script/build.js",
+		"test": "node script/build.js && node test/run.js"
+	},
+	"devDependencies": {
+		"js-yaml": "^4.1.0",
+		"vscode-oniguruma": "^2.0.1",
+		"vscode-textmate": "^9.2.0"
+	},
+	"contributes": {
+		"languages": [
+			{
+				"id": "armasm",
+				"aliases": ["ARM Assembly", "armasm"],
+				"extensions": [".s"]
+			},
+			{
+				"id": "bbcbasic",
+				"aliases": ["BBC BASIC", "bbcbasic"],
+				"extensions": [".bas", ".bbc"]
+			},
+			{
+				"id": "cmhg",
+				"aliases": ["CMHG", "cmhg"],
+				"extensions": [".cmhg"]
+			}
+		],
+		"grammars": [
+			{
+				"language": "armasm",
+				"scopeName": "source.armasm",
+				"path": "./grammars/armasm.tmLanguage.json"
+			},
+			{
+				"language": "bbcbasic",
+				"scopeName": "source.bbcbasic",
+				"path": "./grammars/bbcbasic.tmLanguage.json"
+			},
+			{
+				"language": "cmhg",
+				"scopeName": "source.cmhg",
+				"path": "./grammars/cmhg.tmLanguage.json"
+			}
+		]
+	}
+}

@@ -1,0 +1,32 @@
+--- 1
+  "; Header comments"      comment.line.semicolon.cmhg
+--- 2
+--- 3
+  "#"                      meta.preprocessor.cmhg punctuation.definition.directive.cmhg
+  "include"                meta.preprocessor.cmhg keyword.control.directive.preprocessor.cmhg
+  " "                      meta.preprocessor.cmhg
+  "\"definitions.h\""      meta.preprocessor.cmhg string.quoted.other.cmhg
+--- 4
+--- 5
+  "command-keyword-table:" keyword.other.declaration.cmhg
+  "command_handler"        entity.name.cmhg
+--- 6
+  "foo"                    entity.name.cmhg
+  "("                      punctuation.section.parens.cmhg
+  "min-args:"              keyword.other.declaration.cmhg
+  "0"                      constant.numeric.decimal.cmhg
+  ","                      punctuation.separator.cmhg
+  "max-args:"              keyword.other.declaration.cmhg
+  "0"                      constant.numeric.decimal.cmhg
+  ","                      punctuation.separator.cmhg
+  "; comment"              comment.line.semicolon.cmhg
+--- 7
+  "international:"         keyword.other.declaration.cmhg
+  ","                      punctuation.separator.cmhg
+--- 8
+  "invalid-syntax:"        keyword.other.declaration.cmhg
+  "\"syntaxtoken\""        string.quoted.double.cmhg
+  "help-text:"             keyword.other.declaration.cmhg
+  "\"helptoken\""          string.quoted.double.cmhg
+  ")"                      punctuation.section.parens.cmhg
+--- 9

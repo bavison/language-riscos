@@ -1,0 +1,658 @@
+--- 1
+  "REM > DefaultFilename"  comment.line.rem.filename.bbcbasic
+--- 2
+  "PRINT"                  keyword.control.bbcbasic
+  ":"                      punctuation.separator.statement.bbcbasic
+  "REM Ordinary comment: This is still a comment" comment.line.rem.bbcbasic
+--- 3
+  "ONERROR"                keyword.control.bbcbasic
+  "PRINT"                  keyword.control.bbcbasic
+  "ERR"                    support.function.bbcbasic
+  ":"                      punctuation.separator.statement.bbcbasic
+  "END"                    keyword.control.bbcbasic
+--- 4
+  "ERROR"                  keyword.control.bbcbasic
+  "1"                      constant.numeric.bbcbasic
+  ","                      punctuation.separator.bbcbasic
+  "\"error\""              string.quoted.double.bbcbasic
+--- 5
+  "IF"                     keyword.control.bbcbasic
+  "2"                      constant.numeric.bbcbasic
+  "*"                      keyword.operator.bbcbasic
+  "2"                      constant.numeric.bbcbasic
+  "="                      keyword.operator.bbcbasic
+  "4"                      constant.numeric.bbcbasic
+  "ELSE"                   keyword.control.bbcbasic
+  "*"                      keyword.other.cli.bbcbasic
+  "Cat:4.$"                meta.cli-command.bbcbasic
+--- 6
+  "FOR"                    keyword.control.bbcbasic
+  "n"                      variable.other.bbcbasic
+  "="                      keyword.operator.bbcbasic
+  "1"                      constant.numeric.bbcbasic
+  "TO"                     keyword.control.bbcbasic
+  "10"                     constant.numeric.bbcbasic
+--- 7
+  "PRINT"                  keyword.control.bbcbasic
+  "TAB"                    support.function.bbcbasic
+  "("                      keyword.operator.bbcbasic
+  "n"                      variable.other.bbcbasic
+  ")"                      keyword.operator.bbcbasic
+  "\"Hello there \""       string.quoted.double.bbcbasic
+  ";"                      punctuation.separator.bbcbasic
+  "FN"                     keyword.other.bbcbasic
+  "number"                 entity.name.function.bbcbasic
+  "("                      keyword.operator.bbcbasic
+  "n"                      variable.other.bbcbasic
+  ")"                      keyword.operator.bbcbasic
+  "DIV"                    keyword.operator.word.bbcbasic
+  "3"                      constant.numeric.bbcbasic
+  "+"                      keyword.operator.bbcbasic
+  "1"                      constant.numeric.bbcbasic
+  "'"                      punctuation.separator.bbcbasic
+  "INKEY$"                 support.function.bbcbasic
+  "("                      keyword.operator.bbcbasic
+  "500"                    constant.numeric.bbcbasic
+  ")"                      keyword.operator.bbcbasic
+  "INKEY"                  support.function.bbcbasic
+  "("                      keyword.operator.bbcbasic
+  "500"                    constant.numeric.bbcbasic
+  ")"                      keyword.operator.bbcbasic
+--- 8
+  "NEXT"                   keyword.control.bbcbasic
+--- 9
+  "DIM"                    keyword.control.bbcbasic
+  "code%"                  variable.other.bbcbasic
+  "100"                    constant.numeric.bbcbasic
+--- 10
+  "FOR"                    keyword.control.bbcbasic
+  "opt"                    variable.other.bbcbasic
+  "="                      keyword.operator.bbcbasic
+  "0"                      constant.numeric.bbcbasic
+  "TO"                     keyword.control.bbcbasic
+  "3"                      constant.numeric.bbcbasic
+  "STEP"                   keyword.control.bbcbasic
+  "3"                      constant.numeric.bbcbasic
+--- 11
+  "P%"                     variable.other.bbcbasic
+  "="                      keyword.operator.bbcbasic
+  "code%"                  variable.other.bbcbasic
+--- 12
+  "["                      meta.assembler.bbcbasic keyword.control.assembler.begin.bbcbasic
+  "OPT"                    meta.assembler.bbcbasic keyword.other.mnemonic.bbcbasic
+  " "                      meta.assembler.bbcbasic
+  "opt"                    meta.assembler.bbcbasic variable.other.bbcbasic
+--- 13
+  ".label1%"               meta.assembler.bbcbasic entity.name.label.bbcbasic
+--- 14
+  ".label2%"               meta.assembler.bbcbasic entity.name.label.bbcbasic
+  " "                      meta.assembler.bbcbasic
+  "LDR"                    meta.assembler.bbcbasic keyword.other.mnemonic.bbcbasic
+  " "                      meta.assembler.bbcbasic
+  "r0"                     meta.assembler.bbcbasic variable.other.bbcbasic
+  ","                      meta.assembler.bbcbasic punctuation.separator.bbcbasic
+  "["                      meta.assembler.bbcbasic punctuation.separator.bbcbasic
+  "P%"                     meta.assembler.bbcbasic variable.other.bbcbasic
+  "MOD"                    meta.assembler.bbcbasic keyword.operator.word.bbcbasic
+  "2"                      meta.assembler.bbcbasic constant.numeric.bbcbasic
+  ","                      meta.assembler.bbcbasic punctuation.separator.bbcbasic
+  "#"                      meta.assembler.bbcbasic punctuation.separator.bbcbasic
+  "0"                      meta.assembler.bbcbasic constant.numeric.bbcbasic
+  "]"                      meta.assembler.bbcbasic punctuation.separator.bbcbasic
+--- 15
+  " "                      meta.assembler.bbcbasic
+  "MOV"                    meta.assembler.bbcbasic keyword.other.mnemonic.bbcbasic
+  " "                      meta.assembler.bbcbasic
+  "pc"                     meta.assembler.bbcbasic variable.other.bbcbasic
+  ","                      meta.assembler.bbcbasic punctuation.separator.bbcbasic
+  "r14"                    meta.assembler.bbcbasic variable.other.bbcbasic
+  ":"                      meta.assembler.bbcbasic punctuation.separator.statement.bbcbasic
+  "REM comments in assembly terminate at colon" meta.assembler.bbcbasic comment.line.assembler.bbcbasic
+  ":"                      meta.assembler.bbcbasic punctuation.separator.statement.bbcbasic
+  "EQUD"                   meta.assembler.bbcbasic keyword.other.mnemonic.bbcbasic
+  " "                      meta.assembler.bbcbasic
+  "-"                      meta.assembler.bbcbasic keyword.operator.bbcbasic
+  "1"                      meta.assembler.bbcbasic constant.numeric.bbcbasic
+--- 16
+  ".label3"                meta.assembler.bbcbasic entity.name.label.bbcbasic
+  ";comment"               meta.assembler.bbcbasic comment.line.assembler.bbcbasic
+--- 17
+  " "                      meta.assembler.bbcbasic
+  "ALIGN"                  meta.assembler.bbcbasic keyword.other.mnemonic.bbcbasic
+--- 18
+  ".label4"                meta.assembler.bbcbasic entity.name.label.bbcbasic
+--- 19
+  "]"                      meta.assembler.bbcbasic keyword.control.assembler.end.bbcbasic
+--- 20
+  "NEXT"                   keyword.control.bbcbasic
+--- 21
+  "CALL"                   keyword.control.bbcbasic
+  "code%"                  variable.other.bbcbasic
+  ":"                      punctuation.separator.statement.bbcbasic
+  "PRINT"                  keyword.control.bbcbasic
+  "USR"                    support.function.bbcbasic
+  "("                      keyword.operator.bbcbasic
+  "code%"                  variable.other.bbcbasic
+  ")"                      keyword.operator.bbcbasic
+--- 22
+  "DIM"                    keyword.control.bbcbasic
+  "`"                      variable.other.bbcbasic
+  "("                      keyword.operator.bbcbasic
+  "100"                    constant.numeric.bbcbasic
+  ","                      punctuation.separator.bbcbasic
+  "100"                    constant.numeric.bbcbasic
+  ")"                      keyword.operator.bbcbasic
+  ":"                      punctuation.separator.statement.bbcbasic
+  "PRINT"                  keyword.control.bbcbasic
+  "DIM"                    support.function.bbcbasic
+  "("                      keyword.operator.bbcbasic
+  "`"                      variable.other.bbcbasic
+  "("                      keyword.operator.bbcbasic
+  ")"                      keyword.operator.bbcbasic
+  ")"                      keyword.operator.bbcbasic
+--- 23
+  "X"                      variable.other.bbcbasic
+  "="                      keyword.operator.bbcbasic
+  "&FEDCBA98"              constant.numeric.hex.bbcbasic
+  ":"                      punctuation.separator.statement.bbcbasic
+  "PRINT"                  keyword.control.bbcbasic
+  "X"                      variable.other.bbcbasic
+  ","                      punctuation.separator.bbcbasic
+  "~"                      punctuation.separator.bbcbasic
+  "X"                      variable.other.bbcbasic
+  ","                      punctuation.separator.bbcbasic
+  "X"                      variable.other.bbcbasic
+  ">>>"                    keyword.operator.bbcbasic
+  "1"                      constant.numeric.bbcbasic
+  ","                      punctuation.separator.bbcbasic
+  "X"                      variable.other.bbcbasic
+  ">>"                     keyword.operator.bbcbasic
+  "1"                      constant.numeric.bbcbasic
+  ","                      punctuation.separator.bbcbasic
+  "X"                      variable.other.bbcbasic
+  ">"                      keyword.operator.bbcbasic
+  "1"                      constant.numeric.bbcbasic
+--- 24
+  "PRINT"                  keyword.control.bbcbasic
+  "%1010"                  constant.numeric.binary.bbcbasic
+  "%1111"                  constant.numeric.binary.bbcbasic
+  ":"                      punctuation.separator.statement.bbcbasic
+  "REM Prints \"10\" then \"15\"" comment.line.rem.bbcbasic
+--- 25
+  "A%"                     variable.other.bbcbasic
+  "="                      keyword.operator.bbcbasic
+  "@%"                     variable.language.bbcbasic
+  ":"                      punctuation.separator.statement.bbcbasic
+  "@%"                     variable.language.bbcbasic
+  "="                      keyword.operator.bbcbasic
+  "\"F10.2\""              string.quoted.double.bbcbasic
+  ":"                      punctuation.separator.statement.bbcbasic
+  "PRINT"                  keyword.control.bbcbasic
+  "~"                      punctuation.separator.bbcbasic
+  "@%"                     variable.language.bbcbasic
+  ":"                      punctuation.separator.statement.bbcbasic
+  "@%"                     variable.language.bbcbasic
+  "="                      keyword.operator.bbcbasic
+  "A%"                     variable.other.bbcbasic
+--- 26
+  "ELLIPSE FILL"           keyword.control.bbcbasic
+  "100"                    constant.numeric.bbcbasic
+  ","                      punctuation.separator.bbcbasic
+  "100"                    constant.numeric.bbcbasic
+  ","                      punctuation.separator.bbcbasic
+  "100"                    constant.numeric.bbcbasic
+  ","                      punctuation.separator.bbcbasic
+  "50"                     constant.numeric.bbcbasic
+  ","                      punctuation.separator.bbcbasic
+  "45"                     constant.numeric.bbcbasic
+--- 27
+  "MOUSEOFF"               keyword.control.bbcbasic
+--- 28
+  "DIM"                    keyword.control.bbcbasic
+  "block%"                 variable.other.bbcbasic
+  "100"                    constant.numeric.bbcbasic
+--- 29
+  "block%"                 variable.other.bbcbasic
+  "!"                      keyword.operator.bbcbasic
+  "2"                      constant.numeric.bbcbasic
+  "*"                      keyword.operator.bbcbasic
+  "4"                      constant.numeric.bbcbasic
+  "="                      keyword.operator.bbcbasic
+  "0"                      constant.numeric.bbcbasic
+--- 30
+  "CASE"                   keyword.control.bbcbasic
+  "thing"                  variable.other.bbcbasic
+  "OF"                     keyword.control.bbcbasic
+--- 31
+  "WHEN"                   keyword.control.bbcbasic
+  "1"                      constant.numeric.bbcbasic
+  ":"                      punctuation.separator.statement.bbcbasic
+  "PRINT"                  keyword.control.bbcbasic
+  "\"one\""                string.quoted.double.bbcbasic
+--- 32
+  "OTHERWISE"              keyword.control.bbcbasic
+  "*"                      keyword.other.cli.bbcbasic
+  "echo not one"           meta.cli-command.bbcbasic
+--- 33
+  "ENDCASE"                keyword.control.bbcbasic
+--- 34
+  "*"                      keyword.other.cli.bbcbasic
+  "Help"                   meta.cli-command.bbcbasic
+--- 35
+  "ON"                     keyword.control.bbcbasic
+--- 36
+  "ON"                     keyword.control.bbcbasic
+  "A%"                     variable.other.bbcbasic
+  "PROC"                   keyword.other.bbcbasic
+  "a"                      entity.name.function.bbcbasic
+  ","                      punctuation.separator.bbcbasic
+  "PROC"                   keyword.other.bbcbasic
+  "b"                      entity.name.function.bbcbasic
+  "ELSE"                   keyword.control.bbcbasic
+  "PROC"                   keyword.other.bbcbasic
+  "c"                      entity.name.function.bbcbasic
+--- 37
+  "ONERROR"                keyword.control.bbcbasic
+  "ONERROROFF"             keyword.control.bbcbasic
+  ":"                      punctuation.separator.statement.bbcbasic
+  "OFF"                    keyword.control.bbcbasic
+  ":"                      punctuation.separator.statement.bbcbasic
+  "REPORT"                 keyword.control.bbcbasic
+  ":"                      punctuation.separator.statement.bbcbasic
+  "END"                    keyword.control.bbcbasic
+--- 38
+  "IF"                     keyword.control.bbcbasic
+  "A%"                     variable.other.bbcbasic
+  "PRINT"                  keyword.control.bbcbasic
+  "\"Problem\""            string.quoted.double.bbcbasic
+--- 39
+  "IF"                     keyword.control.bbcbasic
+  "A$"                     variable.other.bbcbasic
+  "THEN"                   keyword.control.bbcbasic
+  "PRINT"                  keyword.control.bbcbasic
+  "\"Not a problem\""      string.quoted.double.bbcbasic
+--- 40
+  "WHILE"                  keyword.control.bbcbasic
+  "NOT"                    keyword.operator.word.bbcbasic
+  "EOF#"                   support.function.bbcbasic
+  "f"                      variable.other.bbcbasic
+  "PRINT"                  keyword.control.bbcbasic
+  "BGET#"                  support.function.bbcbasic
+  "f"                      variable.other.bbcbasic
+  ":"                      punctuation.separator.statement.bbcbasic
+  "ENDWHILE"               keyword.control.bbcbasic
+--- 41
+  "REPEAT"                 keyword.control.bbcbasic
+  "UNTIL"                  keyword.control.bbcbasic
+  "FALSE"                  constant.language.bbcbasic
+--- 42
+  "END"                    keyword.control.bbcbasic
+--- 43
+  "DEFPROC"                storage.type.function.bbcbasic
+  "a"                      entity.name.function.bbcbasic
+  "PRINT"                  keyword.control.bbcbasic
+  "\"Hello world\""        string.quoted.double.bbcbasic
+  ":"                      punctuation.separator.statement.bbcbasic
+  "ENDPROC"                keyword.control.bbcbasic
+--- 44
+  "DEFFN"                  storage.type.function.bbcbasic
+  "number"                 entity.name.function.bbcbasic
+  "("                      keyword.operator.bbcbasic
+  "x%"                     variable.other.bbcbasic
+  ")"                      keyword.operator.bbcbasic
+  "="                      keyword.operator.bbcbasic
+  "ABS"                    support.function.bbcbasic
+  "("                      keyword.operator.bbcbasic
+  "x%"                     variable.other.bbcbasic
+  "-"                      keyword.operator.bbcbasic
+  "4"                      constant.numeric.bbcbasic
+  ")"                      keyword.operator.bbcbasic
+--- 45
+--- 46
+  "MODE"                   keyword.control.bbcbasic
+  "1"                      constant.numeric.bbcbasic
+  ":"                      punctuation.separator.statement.bbcbasic
+  "VDU"                    keyword.control.bbcbasic
+  "5"                      constant.numeric.bbcbasic
+--- 47
+  "FOR"                    keyword.control.bbcbasic
+  "N"                      variable.other.bbcbasic
+  "="                      keyword.operator.bbcbasic
+  "8"                      constant.numeric.bbcbasic
+  "TO"                     keyword.control.bbcbasic
+  "247"                    constant.numeric.bbcbasic
+  ":"                      punctuation.separator.statement.bbcbasic
+  "FOR"                    keyword.control.bbcbasic
+  "M"                      variable.other.bbcbasic
+  "="                      keyword.operator.bbcbasic
+  "0"                      constant.numeric.bbcbasic
+  "TO"                     keyword.control.bbcbasic
+  "319"                    constant.numeric.bbcbasic
+--- 48
+  "X"                      variable.other.bbcbasic
+  "="                      keyword.operator.bbcbasic
+  "0"                      constant.numeric.bbcbasic
+  ":"                      punctuation.separator.statement.bbcbasic
+  "Y"                      variable.other.bbcbasic
+  "="                      keyword.operator.bbcbasic
+  "-"                      keyword.operator.bbcbasic
+  ".1"                     constant.numeric.bbcbasic
+  ":"                      punctuation.separator.statement.bbcbasic
+  "Z"                      variable.other.bbcbasic
+  "="                      keyword.operator.bbcbasic
+  "3"                      constant.numeric.bbcbasic
+  ":"                      punctuation.separator.statement.bbcbasic
+  "U"                      variable.other.bbcbasic
+  "="                      keyword.operator.bbcbasic
+  "("                      keyword.operator.bbcbasic
+  "M"                      variable.other.bbcbasic
+  "-"                      keyword.operator.bbcbasic
+  "159.5"                  constant.numeric.bbcbasic
+  ")"                      keyword.operator.bbcbasic
+  "/"                      keyword.operator.bbcbasic
+  "160"                    constant.numeric.bbcbasic
+  ":"                      punctuation.separator.statement.bbcbasic
+  "V"                      variable.other.bbcbasic
+  "="                      keyword.operator.bbcbasic
+  "("                      keyword.operator.bbcbasic
+  "N"                      variable.other.bbcbasic
+  "-"                      keyword.operator.bbcbasic
+  "127.5"                  constant.numeric.bbcbasic
+  ")"                      keyword.operator.bbcbasic
+  "/"                      keyword.operator.bbcbasic
+  "160"                    constant.numeric.bbcbasic
+  ":"                      punctuation.separator.statement.bbcbasic
+  "W"                      variable.other.bbcbasic
+  "="                      keyword.operator.bbcbasic
+  "1"                      constant.numeric.bbcbasic
+  "/"                      keyword.operator.bbcbasic
+  "SQR"                    support.function.bbcbasic
+  "("                      keyword.operator.bbcbasic
+  "U"                      variable.other.bbcbasic
+  "*"                      keyword.operator.bbcbasic
+  "U"                      variable.other.bbcbasic
+  "+"                      keyword.operator.bbcbasic
+  "V"                      variable.other.bbcbasic
+  "*"                      keyword.operator.bbcbasic
+  "V"                      variable.other.bbcbasic
+  "+"                      keyword.operator.bbcbasic
+  "1"                      constant.numeric.bbcbasic
+  ")"                      keyword.operator.bbcbasic
+  ":"                      punctuation.separator.statement.bbcbasic
+  "U"                      variable.other.bbcbasic
+  "="                      keyword.operator.bbcbasic
+  "U"                      variable.other.bbcbasic
+  "*"                      keyword.operator.bbcbasic
+  "W"                      variable.other.bbcbasic
+  ":"                      punctuation.separator.statement.bbcbasic
+  "V"                      variable.other.bbcbasic
+  "="                      keyword.operator.bbcbasic
+  "V"                      variable.other.bbcbasic
+  "*"                      keyword.operator.bbcbasic
+  "W"                      variable.other.bbcbasic
+  ":"                      punctuation.separator.statement.bbcbasic
+  "I"                      variable.other.bbcbasic
+  "="                      keyword.operator.bbcbasic
+  "SGN"                    support.function.bbcbasic
+  "U"                      variable.other.bbcbasic
+  ":"                      punctuation.separator.statement.bbcbasic
+  "G"                      variable.other.bbcbasic
+  "="                      keyword.operator.bbcbasic
+  "1"                      constant.numeric.bbcbasic
+--- 49
+  "E"                      variable.other.bbcbasic
+  "="                      keyword.operator.bbcbasic
+  "X"                      variable.other.bbcbasic
+  "-"                      keyword.operator.bbcbasic
+  "I"                      variable.other.bbcbasic
+  ":"                      punctuation.separator.statement.bbcbasic
+  "F"                      variable.other.bbcbasic
+  "="                      keyword.operator.bbcbasic
+  "Y"                      variable.other.bbcbasic
+  "-"                      keyword.operator.bbcbasic
+  "I"                      variable.other.bbcbasic
+  ":"                      punctuation.separator.statement.bbcbasic
+  "P"                      variable.other.bbcbasic
+  "="                      keyword.operator.bbcbasic
+  "U"                      variable.other.bbcbasic
+  "*"                      keyword.operator.bbcbasic
+  "E"                      variable.other.bbcbasic
+  "+"                      keyword.operator.bbcbasic
+  "V"                      variable.other.bbcbasic
+  "*"                      keyword.operator.bbcbasic
+  "F"                      variable.other.bbcbasic
+  "-"                      keyword.operator.bbcbasic
+  "W"                      variable.other.bbcbasic
+  "*"                      keyword.operator.bbcbasic
+  "Z"                      variable.other.bbcbasic
+  ":"                      punctuation.separator.statement.bbcbasic
+  "D"                      variable.other.bbcbasic
+  "="                      keyword.operator.bbcbasic
+  "P"                      variable.other.bbcbasic
+  "*"                      keyword.operator.bbcbasic
+  "P"                      variable.other.bbcbasic
+  "-"                      keyword.operator.bbcbasic
+  "E"                      variable.other.bbcbasic
+  "*"                      keyword.operator.bbcbasic
+  "E"                      variable.other.bbcbasic
+  "-"                      keyword.operator.bbcbasic
+  "F"                      variable.other.bbcbasic
+  "*"                      keyword.operator.bbcbasic
+  "F"                      variable.other.bbcbasic
+  "-"                      keyword.operator.bbcbasic
+  "Z"                      variable.other.bbcbasic
+  "*"                      keyword.operator.bbcbasic
+  "Z"                      variable.other.bbcbasic
+  "+"                      keyword.operator.bbcbasic
+  "1"                      constant.numeric.bbcbasic
+  ":"                      punctuation.separator.statement.bbcbasic
+  "IF"                     keyword.control.bbcbasic
+  "D"                      variable.other.bbcbasic
+  ">"                      keyword.operator.bbcbasic
+  "0"                      constant.numeric.bbcbasic
+  "T"                      variable.other.bbcbasic
+  "="                      keyword.operator.bbcbasic
+  "-"                      keyword.operator.bbcbasic
+  "P"                      variable.other.bbcbasic
+  "-"                      keyword.operator.bbcbasic
+  "SQR"                    support.function.bbcbasic
+  "D"                      variable.other.bbcbasic
+  ":"                      punctuation.separator.statement.bbcbasic
+  "IF"                     keyword.control.bbcbasic
+  "T"                      variable.other.bbcbasic
+  ">"                      keyword.operator.bbcbasic
+  "0"                      constant.numeric.bbcbasic
+  "X"                      variable.other.bbcbasic
+  "="                      keyword.operator.bbcbasic
+  "X"                      variable.other.bbcbasic
+  "+"                      keyword.operator.bbcbasic
+  "T"                      variable.other.bbcbasic
+  "*"                      keyword.operator.bbcbasic
+  "U"                      variable.other.bbcbasic
+  ":"                      punctuation.separator.statement.bbcbasic
+  "Y"                      variable.other.bbcbasic
+  "="                      keyword.operator.bbcbasic
+  "Y"                      variable.other.bbcbasic
+  "+"                      keyword.operator.bbcbasic
+  "T"                      variable.other.bbcbasic
+  "*"                      keyword.operator.bbcbasic
+  "V"                      variable.other.bbcbasic
+  ":"                      punctuation.separator.statement.bbcbasic
+  "Z"                      variable.other.bbcbasic
+  "="                      keyword.operator.bbcbasic
+  "Z"                      variable.other.bbcbasic
+  "-"                      keyword.operator.bbcbasic
+  "T"                      variable.other.bbcbasic
+  "*"                      keyword.operator.bbcbasic
+  "W"                      variable.other.bbcbasic
+  ":"                      punctuation.separator.statement.bbcbasic
+  "E"                      variable.other.bbcbasic
+  "="                      keyword.operator.bbcbasic
+  "X"                      variable.other.bbcbasic
+  "-"                      keyword.operator.bbcbasic
+  "I"                      variable.other.bbcbasic
+  ":"                      punctuation.separator.statement.bbcbasic
+  "F"                      variable.other.bbcbasic
+  "="                      keyword.operator.bbcbasic
+  "Y"                      variable.other.bbcbasic
+  "-"                      keyword.operator.bbcbasic
+  "I"                      variable.other.bbcbasic
+  ":"                      punctuation.separator.statement.bbcbasic
+  "G"                      variable.other.bbcbasic
+  "="                      keyword.operator.bbcbasic
+  "Z"                      variable.other.bbcbasic
+  ":"                      punctuation.separator.statement.bbcbasic
+  "P"                      variable.other.bbcbasic
+  "="                      keyword.operator.bbcbasic
+  "2"                      constant.numeric.bbcbasic
+  "*"                      keyword.operator.bbcbasic
+  "("                      keyword.operator.bbcbasic
+  "U"                      variable.other.bbcbasic
+  "*"                      keyword.operator.bbcbasic
+  "E"                      variable.other.bbcbasic
+  "+"                      keyword.operator.bbcbasic
+  "V"                      variable.other.bbcbasic
+  "*"                      keyword.operator.bbcbasic
+  "F"                      variable.other.bbcbasic
+  "-"                      keyword.operator.bbcbasic
+  "W"                      variable.other.bbcbasic
+  "*"                      keyword.operator.bbcbasic
+  "G"                      variable.other.bbcbasic
+  ")"                      keyword.operator.bbcbasic
+  ":"                      punctuation.separator.statement.bbcbasic
+  "U"                      variable.other.bbcbasic
+  "="                      keyword.operator.bbcbasic
+  "U"                      variable.other.bbcbasic
+  "-"                      keyword.operator.bbcbasic
+  "P"                      variable.other.bbcbasic
+  "*"                      keyword.operator.bbcbasic
+  "E"                      variable.other.bbcbasic
+  ":"                      punctuation.separator.statement.bbcbasic
+  "V"                      variable.other.bbcbasic
+  "="                      keyword.operator.bbcbasic
+  "V"                      variable.other.bbcbasic
+  "-"                      keyword.operator.bbcbasic
+  "P"                      variable.other.bbcbasic
+  "*"                      keyword.operator.bbcbasic
+  "F"                      variable.other.bbcbasic
+  ":"                      punctuation.separator.statement.bbcbasic
+  "W"                      variable.other.bbcbasic
+  "="                      keyword.operator.bbcbasic
+  "W"                      variable.other.bbcbasic
+  "+"                      keyword.operator.bbcbasic
+  "P"                      variable.other.bbcbasic
+  "*"                      keyword.operator.bbcbasic
+  "G"                      variable.other.bbcbasic
+  ":"                      punctuation.separator.statement.bbcbasic
+  "I"                      variable.other.bbcbasic
+  "="                      keyword.operator.bbcbasic
+  "-"                      keyword.operator.bbcbasic
+  "I"                      variable.other.bbcbasic
+  ":"                      punctuation.separator.statement.bbcbasic
+  "GOTO"                   keyword.control.bbcbasic
+  "40"                     constant.numeric.bbcbasic
+--- 50
+  "IF"                     keyword.control.bbcbasic
+  "V"                      variable.other.bbcbasic
+  "<"                      keyword.operator.bbcbasic
+  "0"                      constant.numeric.bbcbasic
+  "P"                      variable.other.bbcbasic
+  "="                      keyword.operator.bbcbasic
+  "("                      keyword.operator.bbcbasic
+  "Y"                      variable.other.bbcbasic
+  "+"                      keyword.operator.bbcbasic
+  "2"                      constant.numeric.bbcbasic
+  ")"                      keyword.operator.bbcbasic
+  "/"                      keyword.operator.bbcbasic
+  "V"                      variable.other.bbcbasic
+  ":"                      punctuation.separator.statement.bbcbasic
+  "V"                      variable.other.bbcbasic
+  "="                      keyword.operator.bbcbasic
+  "-"                      keyword.operator.bbcbasic
+  "V"                      variable.other.bbcbasic
+  "*"                      keyword.operator.bbcbasic
+  "("                      keyword.operator.bbcbasic
+  "("                      keyword.operator.bbcbasic
+  "INT"                    support.function.bbcbasic
+  "("                      keyword.operator.bbcbasic
+  "X"                      variable.other.bbcbasic
+  "-"                      keyword.operator.bbcbasic
+  "U"                      variable.other.bbcbasic
+  "*"                      keyword.operator.bbcbasic
+  "P"                      variable.other.bbcbasic
+  ")"                      keyword.operator.bbcbasic
+  "+"                      keyword.operator.bbcbasic
+  "INT"                    support.function.bbcbasic
+  "("                      keyword.operator.bbcbasic
+  "Z"                      variable.other.bbcbasic
+  "-"                      keyword.operator.bbcbasic
+  "W"                      variable.other.bbcbasic
+  "*"                      keyword.operator.bbcbasic
+  "P"                      variable.other.bbcbasic
+  ")"                      keyword.operator.bbcbasic
+  "AND"                    keyword.operator.word.bbcbasic
+  "1"                      constant.numeric.bbcbasic
+  ")"                      keyword.operator.bbcbasic
+  "/"                      keyword.operator.bbcbasic
+  "2"                      constant.numeric.bbcbasic
+  "+"                      keyword.operator.bbcbasic
+  ".3"                     constant.numeric.bbcbasic
+  ")"                      keyword.operator.bbcbasic
+  "+"                      keyword.operator.bbcbasic
+  ".2"                     constant.numeric.bbcbasic
+--- 51
+  "GCOL"                   keyword.control.bbcbasic
+  "0"                      constant.numeric.bbcbasic
+  ","                      punctuation.separator.bbcbasic
+  "3"                      constant.numeric.bbcbasic
+  "-"                      keyword.operator.bbcbasic
+  "("                      keyword.operator.bbcbasic
+  "48"                     constant.numeric.bbcbasic
+  "*"                      keyword.operator.bbcbasic
+  "SQR"                    support.function.bbcbasic
+  "V"                      variable.other.bbcbasic
+  "+"                      keyword.operator.bbcbasic
+  "16"                     constant.numeric.bbcbasic
+  "*"                      keyword.operator.bbcbasic
+  "("                      keyword.operator.bbcbasic
+  "PI"                     support.function.bbcbasic
+  "*"                      keyword.operator.bbcbasic
+  "("                      keyword.operator.bbcbasic
+  "M"                      variable.other.bbcbasic
+  "+"                      keyword.operator.bbcbasic
+  "17"                     constant.numeric.bbcbasic
+  "*"                      keyword.operator.bbcbasic
+  "N"                      variable.other.bbcbasic
+  ")"                      keyword.operator.bbcbasic
+  "-"                      keyword.operator.bbcbasic
+  "INT"                    support.function.bbcbasic
+  "("                      keyword.operator.bbcbasic
+  "PI"                     support.function.bbcbasic
+  "*"                      keyword.operator.bbcbasic
+  "("                      keyword.operator.bbcbasic
+  "M"                      variable.other.bbcbasic
+  "+"                      keyword.operator.bbcbasic
+  "17"                     constant.numeric.bbcbasic
+  "*"                      keyword.operator.bbcbasic
+  "N"                      variable.other.bbcbasic
+  ")"                      keyword.operator.bbcbasic
+  ")"                      keyword.operator.bbcbasic
+  ")"                      keyword.operator.bbcbasic
+  ")"                      keyword.operator.bbcbasic
+  "DIV"                    keyword.operator.word.bbcbasic
+  "16"                     constant.numeric.bbcbasic
+--- 52
+  "PLOT"                   keyword.control.bbcbasic
+  "69"                     constant.numeric.bbcbasic
+  ","                      punctuation.separator.bbcbasic
+  "4"                      constant.numeric.bbcbasic
+  "*"                      keyword.operator.bbcbasic
+  "M"                      variable.other.bbcbasic
+  ","                      punctuation.separator.bbcbasic
+  "4"                      constant.numeric.bbcbasic
+  "*"                      keyword.operator.bbcbasic
+  "N"                      variable.other.bbcbasic
+  ":"                      punctuation.separator.statement.bbcbasic
+  "NEXT"                   keyword.control.bbcbasic
+  ","                      punctuation.separator.bbcbasic
+--- 53

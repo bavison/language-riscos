@@ -1,0 +1,380 @@
+--- 1
+  "#"                      meta.preprocessor.armasm punctuation.definition.directive.armasm
+  "ifndef"                 meta.preprocessor.armasm keyword.control.directive.preprocessor.armasm
+  " Version"               meta.preprocessor.armasm
+--- 2
+  "    "                   meta.preprocessor.armasm
+  "#"                      meta.preprocessor.armasm punctuation.definition.directive.armasm
+  "include"                meta.preprocessor.armasm keyword.control.directive.preprocessor.armasm
+  " \"Version.h\""         meta.preprocessor.armasm
+--- 3
+  "#"                      meta.preprocessor.armasm punctuation.definition.directive.armasm
+  "endif"                  meta.preprocessor.armasm keyword.control.directive.preprocessor.armasm
+--- 4
+--- 5
+  "; it shouldn't have any problem with apostrophes in comments" comment.line.semicolon.armasm
+--- 6
+  "; or \"quotation marks\" or more ;s" comment.line.semicolon.armasm
+--- 7
+--- 8
+  "GET"                    keyword.control.directive.armasm
+  "     otherfile.s"       string.unquoted.filename.armasm
+--- 9
+--- 10
+  "^"                      keyword.control.directive.armasm
+  "0"                      constant.numeric.integer.armasm
+  ","                      punctuation.separator.armasm
+  "r12"                    variable.other.armasm
+  "; typical data structure layout" comment.line.semicolon.armasm
+--- 11
+  "offset1"                entity.name.label.armasm
+  "#"                      keyword.control.directive.armasm
+  "4"                      constant.numeric.integer.armasm
+--- 12
+  "#"                      keyword.control.directive.armasm
+  "4"                      constant.numeric.integer.armasm
+  "; sometimes no label assigned" comment.line.semicolon.armasm
+--- 13
+  "offset2"                entity.name.label.armasm
+  "#"                      keyword.control.directive.armasm
+  "0"                      constant.numeric.integer.armasm
+--- 14
+  "size"                   entity.name.label.armasm
+  "*"                      keyword.control.directive.armasm
+  ":INDEX:"                keyword.operator.word.armasm
+  "@"                      constant.language.armasm
+--- 15
+--- 16
+  "IF"                     keyword.control.directive.armasm
+  "?"                      keyword.operator.armasm
+  "offset1"                variable.other.armasm
+  "="                      keyword.operator.armasm
+  "4"                      constant.numeric.integer.armasm
+--- 17
+  "!"                      keyword.control.directive.armasm
+  "1"                      constant.numeric.integer.armasm
+  ","                      punctuation.separator.armasm
+  "\""                     string.quoted.double.armasm
+  "This is an assembly-time assert" string.quoted.double.armasm
+  "\""                     string.quoted.double.armasm
+--- 18
+  "ELIF"                   keyword.control.directive.armasm
+  "-"                      keyword.operator.armasm
+  "1"                      constant.numeric.integer.armasm
+  "<>"                     keyword.operator.armasm
+  ":NOT:"                  keyword.operator.word.armasm
+  "0"                      constant.numeric.integer.armasm
+--- 19
+  "!"                      keyword.control.directive.armasm
+  "1"                      constant.numeric.integer.armasm
+  ","                      punctuation.separator.armasm
+  "\""                     string.quoted.double.armasm
+  "This is another assert" string.quoted.double.armasm
+  "\""                     string.quoted.double.armasm
+--- 20
+  "ELSE"                   keyword.control.directive.armasm
+--- 21
+  "!"                      keyword.control.directive.armasm
+  "0"                      constant.numeric.integer.armasm
+  ","                      punctuation.separator.armasm
+  "\""                     string.quoted.double.armasm
+  "But this is a warning"  string.quoted.double.armasm
+  "\""                     string.quoted.double.armasm
+  ","                      punctuation.separator.armasm
+  "1"                      constant.numeric.integer.armasm
+--- 22
+  "ENDIF"                  keyword.control.directive.armasm
+--- 23
+--- 24
+  "my_r0"                  entity.name.label.armasm
+  "RN"                     keyword.control.directive.armasm
+  "0"                      constant.numeric.integer.armasm
+  "; non-standard register name symbols" comment.line.semicolon.armasm
+--- 25
+--- 26
+  "sixteen"                entity.name.label.armasm
+  "*"                      keyword.control.directive.armasm
+  "4"                      constant.numeric.integer.armasm
+  "*"                      keyword.operator.armasm
+  "4"                      constant.numeric.integer.armasm
+--- 27
+--- 28
+  "GBLS"                   keyword.control.directive.armasm
+  "VBar"                   variable.other.armasm
+--- 29
+  "VBar"                   entity.name.label.armasm
+  "SETS"                   keyword.control.directive.armasm
+  "\""                     string.quoted.double.armasm
+  "|"                      string.quoted.double.armasm
+  "\""                     string.quoted.double.armasm
+--- 30
+--- 31
+  "MACRO"                  keyword.control.directive.armasm
+--- 32
+  "$label"                 entity.name.label.armasm variable.parameter.armasm
+  "MyMacro"                entity.name.function.macro.armasm
+  "$suffix"                variable.parameter.armasm
+  "$arg1"                  variable.parameter.armasm
+  "="                      keyword.operator.armasm
+  "default"                variable.other.armasm
+  ","                      punctuation.separator.armasm
+  "$arg2"                  variable.parameter.armasm
+--- 33
+  "LCLS"                   keyword.control.directive.armasm
+  "thing"                  variable.other.armasm
+--- 34
+  "["                      keyword.control.directive.armasm
+  "\""                     string.quoted.double.armasm
+  "$arg2"                  string.quoted.double.armasm variable.parameter.armasm
+  "\""                     string.quoted.double.armasm
+  "="                      keyword.operator.armasm
+  "\""                     string.quoted.double.armasm
+  "\""                     string.quoted.double.armasm
+--- 35
+  "thing"                  entity.name.label.armasm
+  "SETS"                   keyword.control.directive.armasm
+  "\""                     string.quoted.double.armasm
+  "wibble ; this isn't a comment" string.quoted.double.armasm
+  "\""                     string.quoted.double.armasm
+--- 36
+  "|"                      keyword.control.directive.armasm
+--- 37
+  "thing"                  entity.name.label.armasm
+  "SETS"                   keyword.control.directive.armasm
+  "$arg2"                  variable.parameter.armasm
+--- 38
+  "]"                      keyword.control.directive.armasm
+--- 39
+  "LCLL"                   keyword.control.directive.armasm
+  "boolean"                variable.other.armasm
+--- 40
+  "boolean"                entity.name.label.armasm
+  "SETL"                   keyword.control.directive.armasm
+  "{TRUE}"                 constant.language.armasm
+--- 41
+  "EXPORT"                 keyword.control.directive.armasm
+  "$arg1"                  variable.parameter.armasm
+--- 42
+  "$arg1"                  entity.name.label.armasm variable.parameter.armasm
+--- 43
+  "$thing"                 entity.name.label.armasm variable.parameter.armasm
+  "MOV"                    keyword.other.mnemonic.armasm
+  "pc"                     variable.other.armasm
+  ","                      punctuation.separator.armasm
+  "#"                      keyword.operator.armasm
+  "0"                      constant.numeric.integer.armasm
+--- 44
+  "MEND"                   keyword.control.directive.armasm
+--- 45
+--- 46
+--- 47
+  "ORG"                    keyword.control.directive.armasm
+  "0"                      constant.numeric.integer.armasm
+--- 48
+--- 49
+  "ARM"                    keyword.control.directive.armasm
+--- 50
+--- 51
+  "AREA"                   keyword.control.directive.armasm
+  "|Area$$Name|"           variable.other.armasm
+  ","                      punctuation.separator.armasm
+  "CODE"                   variable.other.armasm
+  ","                      punctuation.separator.armasm
+  "READONLY"               variable.other.armasm
+--- 52
+--- 53
+  "MyFunc"                 entity.name.label.armasm
+  "ROUT"                   keyword.control.directive.armasm
+--- 54
+--- 55
+  "just_a_label"           entity.name.label.armasm
+--- 56
+  "label_and"              entity.name.label.armasm
+  "; comment"              comment.line.semicolon.armasm
+--- 57
+  "LDR"                    keyword.other.mnemonic.armasm
+  "my_r0"                  variable.other.armasm
+  ","                      punctuation.separator.armasm
+  "="                      keyword.operator.armasm
+  "just_a_statement"       variable.other.armasm
+--- 58
+  "label"                  entity.name.label.armasm
+  "AND"                    keyword.other.mnemonic.armasm
+  "r0"                     variable.other.armasm
+  ","                      punctuation.separator.armasm
+  "r1"                     variable.other.armasm
+  ","                      punctuation.separator.armasm
+  "r2"                     variable.other.armasm
+  "; and a comment"        comment.line.semicolon.armasm
+--- 59
+  "MOV"                    keyword.other.mnemonic.armasm
+  "r0"                     variable.other.armasm
+  ","                      punctuation.separator.armasm
+  "r1"                     variable.other.armasm
+  ","                      punctuation.separator.armasm
+  "r2"                     variable.other.armasm
+  ","                      punctuation.separator.armasm
+  "LSL"                    support.constant.armasm
+  "r3"                     variable.other.armasm
+--- 60
+  "MOV.W"                  keyword.other.mnemonic.armasm
+  "r0"                     variable.other.armasm
+  ","                      punctuation.separator.armasm
+  "r1"                     variable.other.armasm
+  ","                      punctuation.separator.armasm
+  "r2"                     variable.other.armasm
+  ","                      punctuation.separator.armasm
+  "ROR"                    support.constant.armasm
+  "#"                      keyword.operator.armasm
+  "1"                      constant.numeric.integer.armasm
+--- 61
+  "ADDS.N"                 keyword.other.mnemonic.armasm
+  "r0"                     variable.other.armasm
+  ","                      punctuation.separator.armasm
+  "r1"                     variable.other.armasm
+--- 62
+  "IT"                     keyword.other.mnemonic.armasm
+  "MI"                     support.constant.armasm
+--- 63
+  "MOVMI"                  keyword.other.mnemonic.armasm
+  "r0"                     variable.other.armasm
+  ","                      punctuation.separator.armasm
+  "r1"                     variable.other.armasm
+  ","                      punctuation.separator.armasm
+  "RRX"                    support.constant.armasm
+--- 64
+  "UND"                    keyword.other.mnemonic.armasm
+  "#"                      keyword.operator.armasm
+  "0x10"                   constant.numeric.hex.armasm
+  "-"                      keyword.operator.armasm
+  "&10"                    constant.numeric.hex.armasm
+--- 65
+  "PUSH"                   keyword.other.mnemonic.armasm
+  "{"                      punctuation.section.armasm
+  "r0"                     variable.other.armasm
+  ","                      punctuation.separator.armasm
+  "r2"                     variable.other.armasm
+  "-"                      keyword.operator.armasm
+  "r4"                     variable.other.armasm
+  ","                      punctuation.separator.armasm
+  "ip"                     variable.other.armasm
+  ","                      punctuation.separator.armasm
+  "lr"                     variable.other.armasm
+  "}"                      punctuation.section.armasm
+--- 66
+  "LDF"                    keyword.other.mnemonic.armasm
+  "F0"                     variable.other.armasm
+  ","                      punctuation.separator.armasm
+  "="                      keyword.operator.armasm
+  "25E-1"                  constant.numeric.float.armasm
+--- 67
+  "VMOVEQ.F64"             keyword.other.mnemonic.armasm
+  "d0"                     variable.other.armasm
+  ","                      punctuation.separator.armasm
+  "#"                      keyword.operator.armasm
+  "-"                      keyword.operator.armasm
+  ".7e1"                   constant.numeric.float.armasm
+--- 68
+--- 69
+  "Symbols_may_contain_d161ts_and_underscores" entity.name.label.armasm
+--- 70
+  "but_must_start_with_a_letter" entity.name.label.armasm
+--- 71
+  "and_are_case_SenSitIve" entity.name.label.armasm
+--- 72
+  "01"                     entity.name.label.armasm
+  "; this, by contrast, is a local label" comment.line.semicolon.armasm
+--- 73
+--- 74
+  "LDR"                    keyword.other.mnemonic.armasm
+  "r0"                     variable.other.armasm
+  ","                      punctuation.separator.armasm
+  "here"                   variable.other.armasm
+--- 75
+  "B"                      keyword.other.mnemonic.armasm
+  "."                      constant.language.armasm
+  "+"                      keyword.operator.armasm
+  "8"                      constant.numeric.integer.armasm
+--- 76
+  "here"                   entity.name.label.armasm
+  "DATA"                   keyword.control.directive.armasm
+--- 77
+  "DCD"                    keyword.control.directive.armasm
+  "1"                      constant.numeric.integer.armasm
+--- 78
+  "BNE"                    keyword.other.mnemonic.armasm
+  "%BT01"                  entity.name.label.local.armasm
+--- 79
+--- 80
+  "DCB"                    keyword.control.directive.armasm
+  "1"                      constant.numeric.integer.armasm
+  ","                      punctuation.separator.armasm
+  "2"                      constant.numeric.integer.armasm
+  ","                      punctuation.separator.armasm
+  "3"                      constant.numeric.integer.armasm
+  ","                      punctuation.separator.armasm
+  "'"                      string.quoted.single.armasm
+  "A"                      string.quoted.single.armasm
+  "'"                      string.quoted.single.armasm
+  ","                      punctuation.separator.armasm
+  "'"                      string.quoted.single.armasm
+  ";"                      string.quoted.single.armasm
+  "'"                      string.quoted.single.armasm
+  ","                      punctuation.separator.armasm
+  "'"                      string.quoted.single.armasm
+  "\""                     string.quoted.single.armasm
+  "'"                      string.quoted.single.armasm
+  "; bytes"                comment.line.semicolon.armasm
+--- 81
+  "="                      keyword.control.directive.armasm
+  "\""                     string.quoted.double.armasm
+  "This is a string with embedded " string.quoted.double.armasm
+  "$$"                     string.quoted.double.armasm constant.character.escape.armasm
+  " dollar and "           string.quoted.double.armasm
+  "\""                     string.quoted.double.armasm
+  "\""                     string.quoted.double.armasm
+  " double quote characters" string.quoted.double.armasm
+  "\""                     string.quoted.double.armasm
+  ","                      punctuation.separator.armasm
+  "0"                      constant.numeric.integer.armasm
+--- 82
+  "="                      keyword.control.directive.armasm
+  "\""                     string.quoted.double.armasm
+  "$VBar."                 string.quoted.double.armasm variable.parameter.armasm
+  "not_part_of_variable_name" string.quoted.double.armasm
+  "\""                     string.quoted.double.armasm
+  ","                      punctuation.separator.armasm
+  "0"                      constant.numeric.integer.armasm
+--- 83
+  "DCD"                    keyword.control.directive.armasm
+  "-"                      keyword.operator.armasm
+  "1"                      constant.numeric.integer.armasm
+  "; words"                comment.line.semicolon.armasm
+--- 84
+  "&"                      keyword.control.directive.armasm
+  "-"                      keyword.operator.armasm
+  "2"                      constant.numeric.integer.armasm
+  ","                      punctuation.separator.armasm
+  ":INDEX:"                keyword.operator.word.armasm
+  "offset1"                variable.other.armasm
+  "; more words"           comment.line.semicolon.armasm
+--- 85
+  "%"                      keyword.control.directive.armasm
+  "16"                     constant.numeric.integer.armasm
+--- 86
+  "same_as"                entity.name.label.armasm
+  "SPACE"                  keyword.control.directive.armasm
+  "16"                     constant.numeric.integer.armasm
+--- 87
+  "or"                     entity.name.label.armasm
+  "FILL"                   keyword.control.directive.armasm
+  "16"                     constant.numeric.integer.armasm
+  ","                      punctuation.separator.armasm
+  "0"                      constant.numeric.integer.armasm
+--- 88
+  "INCBIN"                 keyword.control.directive.armasm
+  "  include.bin"          string.unquoted.filename.armasm
+--- 89
+--- 90
+  "END"                    keyword.control.directive.armasm
+--- 91

@@ -1,0 +1,163 @@
+# ARM assembly language, in the syntax accepted by the RISC OS ObjAsm
+# assembler and by Arm's own assemblers (SDT, ADS, RVCT, Keil MDK and
+# Arm Compiler 5 armasm).
+#
+# This is distinct from the GNU "gas" syntax used for ARM targets.
+# Ported from the Rouge lexer (lib/rouge/lexers/armasm.rb).
+#
+# Every source line has the form
+#   {label} {opcode-or-directive {operands}} {; comment}
+# where a label must begin in the first column and an opcode must not.
+
+name: ARM Assembly
+scopeName: source.armasm
+fileTypes: [s]
+
+patterns:
+  - include: '#preprocessor'
+  - include: '#file-directive-line'
+  - include: '#statement-line'
+  - include: '#label'
+  - include: '#comment'
+
+repository:
+
+  comment:
+    match: ';.*$'
+    name: comment.line.semicolon.armasm
+
+  # Lines that are processed by a C preprocessor before assembly
+  preprocessor:
+    match: '^\s*(#)\s*(include|import|if|ifdef|ifndef|elif|else|endif|define|undef|line|error|warning|pragma)\b(.*)$'
+    name: meta.preprocessor.armasm
+    captures:
+      '1': {name: punctuation.definition.directive.armasm}
+      '2': {name: keyword.control.directive.preprocessor.armasm}
+
+  # A label, or a macro parameter used as a label (eg "$label"), possibly
+  # concatenated together
+  label:
+    match: '^((?:\$[A-Za-z_]\w*\.?|\w+|\|[^|]+\|)+)'
+    captures:
+      '1':
+        name: entity.name.label.armasm
+        patterns:
+          - include: '#substitution'
+
+  substitution:
+    patterns:
+      - match: '\$\$'
+        name: constant.character.escape.armasm
+      - match: '\$[A-Za-z_]\w*\.?'
+        name: variable.parameter.armasm
+
+  # Directives whose operand is a filename, which is not tokenised further
+  file-directive-line:
+    begin: '^((?:\$[A-Za-z_]\w*\.?|\w+|\|[^|]+\|)*)([ \t]+)((?i:bin|get|incbin|include|lnk))(?=[ \t]|$)'
+    end: '$'
+    beginCaptures:
+      '1':
+        name: entity.name.label.armasm
+        patterns:
+          - include: '#substitution'
+      '3': {name: keyword.control.directive.armasm}
+    contentName: string.unquoted.filename.armasm
+    patterns:
+      - include: '#substitution'
+
+  statement-line:
+    begin: '^((?:\$[A-Za-z_]\w*\.?|\w+|\|[^|]+\|)*)([ \t]+)(?=[^\s;])'
+    end: '$'
+    beginCaptures:
+      '1':
+        name: entity.name.label.armasm
+        patterns:
+          - include: '#substitution'
+    patterns:
+      - include: '#opcode'
+      - include: '#operands'
+
+  # The first token of a statement: a directive, an instruction mnemonic
+  # or a macro invocation. \G anchors these to the position immediately
+  # after the leading whitespace.
+  opcode:
+    patterns:
+      # Single-character synonyms for directives:
+      # [ IF, | ELSE, ] ENDIF, ! ASSERT/INFO, # FIELD, * EQU, = DCB,
+      # % SPACE, & DCD, ^ MAP
+      - match: '\G[\[\]|!#*=%&^](?=[ \t;]|$)'
+        name: keyword.control.directive.armasm
+      - match: >-
+          \G(?i:alias|align|aof|aout|area|arm|assert|attr|cn|code16|code32|common|cp|data|dcb|dcd|dcdo|dcdu|dcfd|dcfdu|dcfh|dcfhu|dcfs|dcfsu|dci(?:\.[nw])?|dcq|dcqu|dcw|dcwu|dn|elif|else|end|endfunc|endif|endp|entry|equ|export|exportas|extern|field|fill|fn|frame|function|gbla|gbll|gbls|global|if|import|info|keep|lcla|lcll|lcls|leadr|leaf|ltorg|macro|map|mend|mexit|nofp|opt|org|preserve8|proc|qn|reloc|require|require8|rlist|rn|rout|seta|setl|sets|sn|space|strong|subt|thumb|thumbx|ttl|wend|while)(?=[ \t;]|$)
+        name: keyword.control.directive.armasm
+      # Rather than attempt to list every instruction, assume that any
+      # all-uppercase or all-lowercase word is a mnemonic (with optional
+      # width qualifier and data type suffixes)
+      - match: '\G(?:[A-Z][0-9A-Z]*|[a-z][0-9a-z]*)(?:\.[NWnw])?(?:\.[DFIPSUdfipsu]?(?:8|16|32|64)?){0,3}\b'
+        name: keyword.other.mnemonic.armasm
+      # Anything else is probably a macro name
+      - match: '\G(?:[A-Za-z_]\w*|\|[^|]+\|)'
+        name: entity.name.function.macro.armasm
+
+  operands:
+    patterns:
+      - include: '#comment'
+      - include: '#substitution'
+      - include: '#string-single'
+      - include: '#string-double'
+      # Shift types and condition codes
+      - match: '\b(?:ASR|LSL|LSR|ROR|RRX|AL|CC|CS|EQ|GE|GT|HI|HS|LE|LO|LS|LT|MI|NE|PL|VC|VS|asr|lsl|lsr|ror|rrx|al|cc|cs|eq|ge|gt|hi|hs|le|lo|ls|lt|mi|ne|pl|vc|vs)\b'
+        name: support.constant.armasm
+      # Symbols (registers, labels, variables...)
+      - match: '[A-Za-z_]\w*|\|[^|]+\|'
+        name: variable.other.armasm
+      # Numeric local label references, eg %b01, %ft10routine
+      - match: '%[bfBF]?[atAT]?\d+(?:[A-Za-z_]\w*)?'
+        name: entity.name.label.local.armasm
+      - include: '#number'
+      # Alignment specifiers, eg [r0@64] or [r0:128]
+      - match: '[@:](?=[ \t]*(?:8|16|32|64|128|256)(?!\d))'
+        name: keyword.operator.alignment.armasm
+      # Current location counter and storage map location
+      - match: '[.@]'
+        name: constant.language.armasm
+      # Built-in variables, eg {PC}, {CONFIG}
+      - match: '\{(?:ARCHITECTURE|AREANAME|ARMASM_VERSION|CODESIZE|COMMANDLINE|CONFIG|CPU|ENDIAN|FALSE|FPIC|FPU|INPUTFILE|INTER|LINENUM|LINENUMUP|LINENUMUPPER|OBJASM_VERSION|OPT|PC|PCSTOREOFFSET|REENTRANT|ROPI|RWPI|TRUE|VAR)\}'
+        name: constant.language.armasm
+      - match: ':TARGET_(?:ARCH|FEATURE)_[0-9A-Z_]+:|:TARGET_FPU_[A-Z_]+:|:TARGET_PROFILE_[ARM]:'
+        name: keyword.operator.word.armasm
+      - match: ':(?:AND|BASE|CC|CC_ENCODING|CHR|DEF|EOR|FATTR|FEXEC|FLOAD|FSIZE|INDEX|LAND|LEFT|LEN|LEOR|LNOT|LOR|LOWERCASE|MOD|NOT|OR|RCONST|REVERSE_CC|RIGHT|ROL|ROR|SHL|SHR|STR|UAL|UPPERCASE):'
+        name: keyword.operator.word.armasm
+      - match: '!=|&&|/=|<<|<=|<>|==|><|>=|>>|\|\||[-!#%&*+/<=>?^|]'
+        name: keyword.operator.armasm
+      - match: ','
+        name: punctuation.separator.armasm
+      - match: '[\[\]{}()]'
+        name: punctuation.section.armasm
+
+  number:
+    patterns:
+      - match: '(?:&|0[xX])[0-9A-Fa-f]+(?![.0-9A-Fa-fPp])'
+        name: constant.numeric.hex.armasm
+      - match: '(?:&|0[xX])[.0-9A-Fa-f]+(?:[Pp][-+]?\d+)?'
+        name: constant.numeric.float.hex.armasm
+      - match: '0[fF]_[0-9A-Fa-f]{8}|0[dD]_[0-9A-Fa-f]{16}'
+        name: constant.numeric.float.armasm
+      - match: '(?:2_[01]+|3_[0-2]+|4_[0-3]+|5_[0-4]+|6_[0-5]+|7_[0-6]+|8_[0-7]+|9_[0-8]+|\d+)(?![.\dEe])'
+        name: constant.numeric.integer.armasm
+      - match: '(?:2_[.01]+|3_[.0-2]+|4_[.0-3]+|5_[.0-4]+|6_[.0-5]+|7_[.0-6]+|8_[.0-7]+|9_[.0-8]+|\d[.\d]*|\.\d[.\d]*)(?:[Ee][-+]?\d+)?'
+        name: constant.numeric.float.armasm
+
+  string-single:
+    begin: "'"
+    end: "'|$"
+    name: string.quoted.single.armasm
+    patterns:
+      - include: '#substitution'
+
+  string-double:
+    begin: '"'
+    end: '"|$'
+    name: string.quoted.double.armasm
+    patterns:
+      - include: '#substitution'

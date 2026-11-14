@@ -1,0 +1,46 @@
+# CMHG: the RISC OS C Module Header Generator description file format,
+# as accepted by Acorn's CMHG tool and the free CMunge replacement.
+#
+# Ported from the Rouge lexer (lib/rouge/lexers/cmhg.rb).
+
+name: CMHG
+scopeName: source.cmhg
+fileTypes: [cmhg]
+
+patterns:
+  - include: '#comment'
+  - include: '#preprocessor'
+  - match: '(?<![-\w])[a-z]+(?:-[a-z]+)*:'
+    name: keyword.other.declaration.cmhg
+  - match: '"[^"]*"'
+    name: string.quoted.double.cmhg
+  - match: '(?:&|0[xX])[0-9A-Fa-f]+'
+    name: constant.numeric.hex.cmhg
+  - match: '\b\d+\b'
+    name: constant.numeric.decimal.cmhg
+  - match: '[A-Za-z_]\w*'
+    name: entity.name.cmhg
+  - match: ','
+    name: punctuation.separator.cmhg
+  - match: '/'
+    name: punctuation.separator.veneer.cmhg
+  - match: '[()]'
+    name: punctuation.section.parens.cmhg
+
+repository:
+
+  comment:
+    match: ';.*$'
+    name: comment.line.semicolon.cmhg
+
+  # CMHG files are passed through the C preprocessor first
+  preprocessor:
+    begin: '^\s*(#)\s*(\w*)'
+    end: '(?<!\\)$'
+    beginCaptures:
+      '1': {name: punctuation.definition.directive.cmhg}
+      '2': {name: keyword.control.directive.preprocessor.cmhg}
+    name: meta.preprocessor.cmhg
+    patterns:
+      - match: '"[^"]*"|<[^>]*>'
+        name: string.quoted.other.cmhg
