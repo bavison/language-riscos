@@ -37,7 +37,7 @@ repository:
   # A label, or a macro parameter used as a label (eg "$label"), possibly
   # concatenated together
   label:
-    match: '^((?:\$[A-Za-z_]\w*\.?|\w+|\|[^|]+\|)+)'
+    match: '^((?:\$[A-Za-z_]\w*+\.?|\w++|\|[^|]++\|)++)'
     captures:
       '1':
         name: entity.name.label.armasm
@@ -53,7 +53,7 @@ repository:
 
   # Directives whose operand is a filename, which is not tokenised further
   file-directive-line:
-    begin: '^((?:\$[A-Za-z_]\w*\.?|\w+|\|[^|]+\|)*)([ \t]+)((?i:bin|get|incbin|include|lnk))(?=[ \t]|$)'
+    begin: '^((?:\$[A-Za-z_]\w*+\.?|\w++|\|[^|]++\|)*+)([ \t]+)((?i:bin|get|incbin|include|lnk))(?=[ \t]|$)'
     end: '$'
     beginCaptures:
       '1':
@@ -66,7 +66,7 @@ repository:
       - include: '#substitution'
 
   statement-line:
-    begin: '^((?:\$[A-Za-z_]\w*\.?|\w+|\|[^|]+\|)*)([ \t]+)(?=[^\s;])'
+    begin: '^((?:\$[A-Za-z_]\w*+\.?|\w++|\|[^|]++\|)*+)([ \t]+)(?=[^\s;])'
     end: '$'
     beginCaptures:
       '1':

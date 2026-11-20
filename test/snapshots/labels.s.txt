@@ -1,0 +1,29 @@
+--- 1
+  "; Long labels: each line's label must be coloured without the regular" comment.line.semicolon.armasm
+--- 2
+  "; expression engine giving up on backtracking" comment.line.semicolon.armasm
+--- 3
+  "cachespritepixtable"    entity.name.label.armasm
+  "ROUT"                   keyword.control.directive.armasm
+--- 4
+  "a_label_of_forty_characters_or_so_here_x" entity.name.label.armasm
+--- 5
+  "a_label_of_forty_characters_or_so_here_y" entity.name.label.armasm
+  "; with a comment"       comment.line.semicolon.armasm
+--- 6
+  "$name."                 entity.name.label.armasm variable.parameter.armasm
+  "a_long_label_with_a_variable_prefix_too" entity.name.label.armasm
+--- 7
+  "|a_long_label_in_bars_with_some_more_words|" entity.name.label.armasm
+--- 8
+  "Entry"                  keyword.control.directive.armasm
+  "\""                     string.quoted.double.armasm
+  "R0-R11"                 string.quoted.double.armasm
+  "\""                     string.quoted.double.armasm
+--- 9
+  "MOV"                    keyword.other.mnemonic.armasm
+  "r0"                     variable.other.armasm
+  ","                      punctuation.separator.armasm
+  "#"                      keyword.operator.armasm
+  "0"                      constant.numeric.integer.armasm
+--- 10
